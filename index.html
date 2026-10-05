@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOLA IT DEVELOPMENT | Technology. Development. Support.</title>
+    <meta
+      name="description"
+      content="DOLA IT DEVELOPMENT provides reliable technology support, website development, security support, cloud assistance, and business automation through recurring plans."
+    />
+    <meta
+      name="keywords"
+      content="IT development, website development, software development, website maintenance, IT support, business technology solutions, web development services"
+    />
+    <meta property="og:title" content="DOLA IT DEVELOPMENT" />
+    <meta
+      property="og:description"
+      content="Reliable technology solutions for growing businesses. Flexible recurring IT and digital support plans."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#071a2f" />
+    <style>
+      :root {
+        --bg: #f3f6fb;
+        --bg-soft: #edf2f9;
+        --panel: #ffffff;
+        --panel-strong: #eaf1ff;
+        --text: #0c1728;
+        --muted: #5d6c82;
+        --subtle: #dfe9f5;
+        --line: rgba(10, 22, 38, 0.08);
+        --primary: #1f74ff;
+        --primary-dark: #0d4bc4;
+        --primary-soft: rgba(31, 116, 255, 0.12);
+        --navy: #071a2f;
+        --navy-2: #0d2340;
+        --success: #1fa76a;
+        --warning: #f2ad41;
+        --danger: #d74f4f;
+        --shadow: 0 18px 40px rgba(15, 35, 57, 0.12);
+        --radius: 20px;
+        --max-width: 1200px;
+      }
+
+      body.dark {
+        --bg: #071421;
+        --bg-soft: #0d1f2f;
+        --panel: #0f2135;
+        --panel-strong: #112845;
+        --text: #edf5ff;
+        --muted: #bfd0ea;
+        --subtle: rgba(152, 176, 210, 0.18);
+        --line: rgba(170, 199, 238, 0.12);
+        --primary: #6aa6ff;
+        --primary-dark: #8db7ff;
+        --primary-soft: rgba(106, 166, 255, 0.15);
+        --navy: #06162b;
+        --navy-2: #0d2139;
+        --shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a { text-decoration: none; color: inherit; }
+      img { max-width: 100%; display: block; }
+      button, input, select, textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: min(var(--max-width), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .section-header {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        color: var(--primary);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 14px;
+      }
+
+      h1, h2, h3, h4 {
+        margin-top: 0;
+        color: var(--text);
+        line-height: 1.15;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 6vw, 4.5rem);
+        letter-spacing: -0.04em;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+
+      p {
+        margin: 0 0 1rem;
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: var(--primary);
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        padding: 0.9rem 1.4rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        box-shadow: 0 12px 24px rgba(31, 116, 255, 0.18);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--subtle);
+        box-shadow: none;
+      }
+
+      .btn.ghost {
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        border-color: var(--line);
+        box-shadow: none;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(12px);
+        background: rgba(7, 20, 33, 0.68);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      body.dark .site-header {
+        background: rgba(7, 20, 33, 0.8);
+      }
+
+      .nav-shell {
+        width: min(var(--max-width), calc(100% - 24px));
+        margin: 0 auto;
+        padding: 18px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #fff;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), #82b3ff);
+        display: grid;
+        place-items: center;
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: rgba(255,255,255,0.82);
+      }
+
+      .nav-links a {
+        font-size: 0.94rem;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: #fff;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .theme-toggle,
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .header-cta {
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 0.9rem 1.25rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .hero {
+        position: relative;
+        background: linear-gradient(180deg, #08182d 0%, #0c1f38 100%);
+        color: #ffffff;
+        padding: 76px 0 90px;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 15%, rgba(106, 166, 255, 0.35), transparent 30%);
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 36px;
+      }
+
+      .hero h1,
+      .hero p,
+      .hero .trust-badges {
+        color: rgba(255,255,255,0.96);
+      }
+
+      .lead {
+        max-width: 620px;
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .hero .btn.secondary {
+        background: rgba(255,255,255,0.06);
+        border-color: rgba(255,255,255,0.18);
+        color: #fff;
+      }
+
+      .trust-badges {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+      }
+
+      .trust-badge {
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.06);
+        color: rgba(255,255,255,0.9);
+        border-radius: 999px;
+        padding: 0.52rem 0.8rem;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 460px;
+      }
+
+      .visual-panel {
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(151, 181, 224, 0.22);
+        border-radius: 28px;
+        background: rgba(8, 25, 42, 0.9);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .visual-topbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 18px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.4);
+      }
+
+      .dot.red { background: #f26464; }
+      .dot.yellow { background: #f6c25d; }
+      .dot.green { background: #4ed28e; }
+
+      .dashboard-mini {
+        padding: 24px;
+      }
+
+      .chart-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      .mini-stat {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      .mini-stat strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+        color: #fff;
+      }
+
+      .mini-stat span {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.8rem;
+      }
+
+      .chart-box {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .chart-bars {
+        display: flex;
+        align-items: end;
+        gap: 12px;
+        height: 118px;
+      }
+
+      .chart-bars span {
+        flex: 1;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, #92b9ff, #2d7af8);
+      }
+
+      .floating-card {
+        position: absolute;
+        right: -12px;
+        bottom: 38px;
+        background: rgba(23, 40, 61, 0.95);
+        border: 1px solid rgba(164, 187, 230, 0.16);
+        border-radius: 18px;
+        padding: 16px 18px;
+        box-shadow: var(--shadow);
+        min-width: 180px;
+      }
+
+      .floating-card small {
+        display: block;
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 5px;
+      }
+
+      .floating-card strong {
+        display: block;
+        font-size: 1.6rem;
+        color: #fff;
+      }
+
+      .floating-card .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #aaf0c6;
+        font-size: 0.76rem;
+        margin-top: 8px;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--success);
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .plans-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+      }
+
+      .billing-switch {
+        display: inline-flex;
+        padding: 6px;
+        border-radius: 999px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .billing-switch button {
+        border: none;
+        background: transparent;
+        color: var(--muted);
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .billing-switch button.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+      }
+
+      .plan-card {
+        position: relative;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .plan-card.popular {
+        border-color: rgba(31, 116, 255, 0.45);
+        transform: translateY(-6px);
+      }
+
+      .popular-tag {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-size: 0.7rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 999px;
+        font-weight: 800;
+      }
+
+      .plan-name {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .plan-price {
+        margin: 18px 0 10px;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.04em;
+        font-weight: 800;
+      }
+
+      .billing-note {
+        display: block;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .plan-features {
+        list-style: none;
+        margin: 20px 0 28px;
+        padding: 0;
+      }
+
+      .plan-features li {
+        position: relative;
+        padding-left: 26px;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .plan-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--success);
+        font-weight: 700;
+      }
+
+      .plan-btn {
+        width: 100%;
+      }
+
+      .sub-note {
+        margin-top: 18px;
+        text-align: center;
+      }
+
+      .sub-note a {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .service-card-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px 18px;
+        cursor: pointer;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 8px 18px rgba(17, 24, 39, 0.04);
+      }
+
+      .service-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(31,116,255,0.35);
+      }
+
+      .service-ico {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 14px;
+        font-weight: 700;
+      }
+
+      .service-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      .dashboard-shell {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .dashboard-header h3 {
+        margin: 0;
+      }
+
+      .demo-label {
+        border: 1px solid rgba(86, 157, 255, 0.3);
+        background: rgba(31, 116, 255, 0.08);
+        color: var(--primary);
+        border-radius: 999px;
+        padding: 0.48rem 0.8rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .dash-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .dash-card .label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .dash-card .value {
+        display: block;
+        margin-top: 12px;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--text);
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.78rem;
+        background: rgba(31, 167, 101, 0.12);
+        color: var(--success);
+        font-weight: 700;
+      }
+
+      .dashboard-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .list-panel {
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .list-panel h4 {
+        margin-bottom: 14px;
+      }
+
+      .list-panel ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .list-panel li {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 10px;
+        color: var(--muted);
+      }
+
+      .form-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .field.full { grid-column: 1 / -1; }
+
+      label {
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      input, select, textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: var(--bg-soft);
+        color: var(--text);
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      input:focus, select:focus, textarea:focus {
+        border-color: rgba(31,116,255,0.45);
+        box-shadow: 0 0 0 4px rgba(31,116,255,0.12);
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .success-message {
+        display: none;
+        margin-top: 16px;
+        background: rgba(31, 167, 101, 0.1);
+        color: var(--success);
+        border: 1px solid rgba(31, 167, 101, 0.2);
+        border-radius: 14px;
+        padding: 0.9rem 1rem;
+        font-weight: 700;
+      }
+
+      .success-message.visible {
+        display: block;
+      }
+
+      .checkout-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+      }
+
+      .order-summary {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .summary-row.total {
+        border-bottom: none;
+        color: var(--text);
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+
+      .how-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .step-card {
+        position: relative;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 24px 20px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .step-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), transparent);
+      }
+
+      .step-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: rgba(31, 116, 255, 0.25);
+        letter-spacing: -0.05em;
+      }
+
+      .faq-list {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        margin-bottom: 14px;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        text-align: left;
+        padding: 20px 18px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+      }
+
+      .faq-answer-inner {
+        padding: 0 18px 18px;
+        color: var(--muted);
+      }
+
+      .faq-toggle {
+        font-size: 1.3rem;
+        color: var(--primary);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .about-panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .bullet-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+      }
+
+      .bullet-list li {
+        padding-left: 22px;
+        position: relative;
+        margin-bottom: 12px;
+        color: var(--muted);
+      }
+
+      .bullet-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-size: 1.6rem;
+        line-height: 1;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 24px;
+      }
+
+      .contact-info {
+        background: linear-gradient(180deg, var(--navy), var(--navy-2));
+        color: #fff;
+        border-radius: 24px;
+        padding: 28px;
+      }
+
+      .contact-info p,
+      .contact-info a,
+      .contact-info li {
+        color: rgba(255,255,255,0.8);
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+      }
+
+      .contact-list li {
+        margin-bottom: 12px;
+      }
+
+      .account-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .account-panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 22px;
+      }
+
+      .admin-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .admin-panels {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .mini-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+
+      .mini-table th,
+      .mini-table td {
+        text-align: left;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scope-box {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .scope-box ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .cta-band {
+        background: linear-gradient(180deg, #0b1d36, #10284f);
+        color: white;
+        padding: 54px 0;
+      }
+
+      .cta-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .cta-inner h2, .cta-inner p { color: white; }
+
+      .footer {
+        background: #06162d;
+        color: rgba(255,255,255,0.75);
+        padding: 60px 0 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+        gap: 28px;
+      }
+
+      .footer h4 {
+        color: white;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .subtle-note {
+        padding-top: 16px;
+        margin-top: 24px;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 8, 15, 0.68);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 999;
+      }
+
+      .modal.open {
+        display: flex;
+      }
+
+      .modal-box {
+        width: min(680px, 100%);
+        background: var(--panel);
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        max-height: 86vh;
+        overflow: auto;
+      }
+
+      .modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .modal-close {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .toast {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: rgba(7, 20, 33, 0.95);
+        color: #fff;
+        border-radius: 12px;
+        padding: 0.9rem 1.1rem;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        transform: translateY(14px);
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 1200;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 46px;
+        height: 46px;
+        border: none;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        display: none;
+        z-index: 600;
+      }
+
+      .back-to-top.show { display: block; }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .about-grid,
+        .checkout-layout,
+        .contact-grid,
+        .grid-2,
+        .footer-grid,
+        .account-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing-grid,
+        .service-card-grid,
+        .how-grid,
+        .dashboard-grid,
+        .admin-grid,
+        .dashboard-list {
+          grid-template-columns: repeat(2, minmax(0,1fr));
+        }
+
+        .cta-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 78px;
+          left: 12px;
+          right: 12px;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 18px;
+          background: rgba(9, 20, 33, 0.98);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 18px;
+          box-shadow: var(--shadow);
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-actions .header-cta,
+        .nav-actions .theme-toggle {
+          display: none;
+        }
+
+        .nav-actions {
+          gap: 8px;
+        }
+
+        .hero {
+          padding-top: 52px;
+        }
+
+        .pricing-grid,
+        .service-card-grid,
+        .how-grid,
+        .dashboard-grid,
+        .admin-grid,
+        .dashboard-list,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a href="#home" class="brand" aria-label="DOLA IT DEVELOPMENT home">
+          <span class="brand-mark">D</span>
+          <span>DOLA IT DEVELOPMENT</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#plans">Plans</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#login">Login</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle color theme">☼</button>
+          <button class="header-cta" data-scroll-target="#plans">Get Started</button>
+          <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Digital Support for Business Growth</div>
+            <h1>Technology Support That Grows With Your Business.</h1>
+            <p class="lead">
+              DOLA IT DEVELOPMENT provides flexible technology services through simple recurring plans,
+              helping businesses maintain, improve and grow their digital infrastructure.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#plans">View Plans</a>
+              <a class="btn secondary" href="#contact">Start Your Subscription</a>
+            </div>
+            <div class="trust-badges" aria-label="Trust statements">
+              <span class="trust-badge">Flexible Plans</span>
+              <span class="trust-badge">Professional Support</span>
+              <span class="trust-badge">Scalable Services</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Technology dashboard preview">
+            <div class="visual-panel">
+              <div class="visual-topbar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="dashboard-mini">
+                <div class="chart-row">
+                  <div class="mini-stat">
+                    <strong>94%</strong>
+                    <span>Demo uptime</span>
+                  </div>
+                  <div class="mini-stat">
+                    <strong>24/7</strong>
+                    <span>Example support</span>
+                  </div>
+                  <div class="mini-stat">
+                    <strong>5k</strong>
+                    <span>Demo tasks</span>
+                  </div>
+                </div>
+                <div class="chart-box">
+                  <div class="chart-bars" aria-label="Performance bars">
+                    <span style="height: 28%;"></span>
+                    <span style="height: 46%;"></span>
+                    <span style="height: 62%;"></span>
+                    <span style="height: 55%;"></span>
+                    <span style="height: 74%;"></span>
+                    <span style="height: 90%;"></span>
+                    <span style="height: 100%;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="floating-card">
+              <small>Demo monitoring</small>
+              <strong>+12.4%</strong>
+              <span class="status"><span class="status-dot"></span>Performance</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="plans">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Service Plans</span>
+            <h2>Choose Your Plan</h2>
+          </div>
+
+          <div class="plans-wrap">
+            <div class="billing-switch" aria-label="Billing frequency switcher">
+              <button class="billing-option active" data-billing="weekly" type="button">Weekly</button>
+              <button class="billing-option" data-billing="monthly" type="button">Monthly</button>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="plan-card">
+              <div class="plan-name">Starter</div>
+              <p>Designed for individuals and small businesses.</p>
+              <div class="plan-price" data-monthly="N30,000" data-weekly="N7,500">N30,000</div>
+              <span class="billing-note">per month</span>
+              <ul class="plan-features">
+                <li>Website maintenance</li>
+                <li>Basic technical support</li>
+                <li>Website updates</li>
+                <li>Regular backups</li>
+                <li>Basic security checks</li>
+              </ul>
+              <button class="btn plan-btn" type="button" data-plan="Starter">Choose Starter</button>
+            </article>
+
+            <article class="plan-card popular">
+              <span class="popular-tag">Popular</span>
+              <div class="plan-name">Professional</div>
+              <p>Designed for growing businesses.</p>
+              <div class="plan-price" data-monthly="N100,000" data-weekly="N25,000">N100,000</div>
+              <span class="billing-note">per month</span>
+              <ul class="plan-features">
+                <li>Everything in Starter</li>
+                <li>Priority technical support</li>
+                <li>More frequent website updates</li>
+                <li>Security monitoring</li>
+                <li>Performance optimization</li>
+                <li>Business automation assistance</li>
+                <li>Monthly technology consultation</li>
+              </ul>
+              <button class="btn plan-btn" type="button" data-plan="Professional">Choose Professional</button>
+            </article>
+
+            <article class="plan-card">
+              <div class="plan-name">Business</div>
+              <p>Designed for companies requiring ongoing technology support.</p>
+              <div class="plan-price" data-monthly="N100,000" data-weekly="N25,000">N100,000</div>
+              <span class="billing-note">per month</span>
+              <ul class="plan-features">
+                <li>Everything in Professional</li>
+                <li>Advanced support</li>
+                <li>Custom development hours</li>
+                <li>Cloud assistance</li>
+                <li>Advanced security support</li>
+                <li>Priority requests</li>
+                <li>Dedicated account support</li>
+              </ul>
+              <button class="btn secondary plan-btn" type="button" data-plan="Business">Contact Us</button>
+            </article>
+          </div>
+
+          <div class="sub-note">
+            <p>Recurring billing will be handled by the connected payment provider after launch. <a href="#legal">Cancellation and refund policy</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Our Services</span>
+            <h2>What Can We Help You With?</h2>
+          </div>
+
+          <div class="service-card-grid">
+            <article class="service-card" data-service="Website Development">
+              <div class="service-ico">WD</div>
+              <h3>Website Development</h3>
+              <p>Professional websites and web applications.</p>
+            </article>
+
+            <article class="service-card" data-service="Website Maintenance">
+              <div class="service-ico">WM</div>
+              <h3>Website Maintenance</h3>
+              <p>Updates, fixes, improvements and ongoing maintenance.</p>
+            </article>
+
+            <article class="service-card" data-service="Cybersecurity Support">
+              <div class="service-ico">CS</div>
+              <h3>Cybersecurity Support</h3>
+              <p>Security-focused website and system maintenance.</p>
+            </article>
+
+            <article class="service-card" data-service="Cloud Support">
+              <div class="service-ico">CL</div>
+              <h3>Cloud Support</h3>
+              <p>Assistance with cloud-based technology.</p>
+            </article>
+
+            <article class="service-card" data-service="Business Automation">
+              <div class="service-ico">BA</div>
+              <h3>Business Automation</h3>
+              <p>Technology solutions that reduce repetitive work.</p>
+            </article>
+
+            <article class="service-card" data-service="IT Consulting">
+              <div class="service-ico">IT</div>
+              <h3>IT Consulting</h3>
+              <p>Professional guidance for technology decisions.</p>
+            </article>
+
+            <article class="service-card" data-service="Software Development">
+              <div class="service-ico">SD</div>
+              <h3>Software Development</h3>
+              <p>Custom software solutions for business needs.</p>
+            </article>
+
+            <article class="service-card" data-service="Digital Support">
+              <div class="service-ico">DS</div>
+              <h3>Digital Support</h3>
+              <p>Ongoing technical assistance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="dashboard">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Customer Dashboard</span>
+            <h2>Welcome, Customer Name</h2>
+          </div>
+
+          <div class="dashboard-shell">
+            <div class="dashboard-header">
+              <h3>Account Overview</h3>
+              <span class="demo-label">Demo Data</span>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="dash-card">
+                <span class="label">Current Subscription</span>
+                <span class="value">Professional Plan</span>
+              </div>
+              <div class="dash-card">
+                <span class="label">Billing Status</span>
+                <span class="value"><span class="status-pill">Active</span></span>
+              </div>
+              <div class="dash-card">
+                <span class="label">Next Billing Date</span>
+                <span class="value">12, August, 2027</span>
+              </div>
+              <div class="dash-card">
+                <span class="label">Services Remaining</span>
+                <span class="value">5,000</span>
+              </div>
+            </div>
+
+            <div class="dashboard-list">
+              <div class="list-panel">
+                <h4>Services</h4>
+                <ul>
+                  <li><span>Website maintenance</span><span>Active</span></li>
+                  <li><span>Security support</span><span>Active</span></li>
+                  <li><span>Automation tasks</span><span>3 left</span></li>
+                </ul>
+              </div>
+
+              <div class="list-panel">
+                <h4>Support Requests</h4>
+                <ul>
+                  <li><span>Theme bug fix</span><span>Open</span></li>
+                  <li><span>Cloud migration</span><span>Review</span></li>
+                  <li><span>Backup check</span><span>Resolved</span></li>
+                </ul>
+              </div>
+
+              <div class="list-panel">
+                <h4>Projects</h4>
+                <ul>
+                  <li><span>Business website refresh</span><span>In progress</span></li>
+                  <li><span>CRM setup</span><span>Queued</span></li>
+                  <li><span>Automation flow</span><span>Planning</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="support-request">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Support Center</span>
+            <h2>Support Ticket System</h2>
+          </div>
+
+          <div class="form-card">
+            <form id="supportForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="supportSubject">Subject</label>
+                  <input id="supportSubject" name="subject" type="text" required />
+                </div>
+
+                <div class="field">
+                  <label for="supportService">Service</label>
+                  <select id="supportService" name="service" required>
+                    <option value="">Select a service</option>
+                    <option>Website Development</option>
+                    <option>Website Maintenance</option>
+                    <option>Cybersecurity Support</option>
+                    <option>Cloud Support</option>
+                    <option>Business Automation</option>
+                    <option>IT Consulting</option>
+                    <option>Software Development</option>
+                    <option>Digital Support</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="supportPriority">Priority</label>
+                  <select id="supportPriority" name="priority" required>
+                    <option value="">Select priority</option>
+                    <option>Low</option>
+                    <option>Normal</option>
+                    <option>High</option>
+                    <option>Urgent</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="supportAttachment">Attachment</label>
+                  <input id="supportAttachment" name="attachment" type="file" />
+                </div>
+
+                <div class="field full">
+                  <label for="supportDescription">Description</label>
+                  <textarea id="supportDescription" name="description" required></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn" type="submit">Create Support Request</button>
+              </div>
+              <div class="success-message" id="supportSuccess">Your support request has been received.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="checkout">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Checkout Preview</span>
+            <h2>Subscription Checkout</h2>
+          </div>
+
+          <div class="checkout-layout">
+            <div class="form-card">
+              <form id="checkoutForm" novalidate>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="customerName">Full name</label>
+                    <input id="customerName" type="text" required />
+                  </div>
+                  <div class="field">
+                    <label for="customerEmail">Email address</label>
+                    <input id="customerEmail" type="email" required />
+                  </div>
+                  <div class="field">
+                    <label for="customerCompany">Company</label>
+                    <input id="customerCompany" type="text" />
+                  </div>
+                  <div class="field">
+                    <label for="billingMethod">Payment method</label>
+                    <select id="billingMethod" required>
+                      <option value="">Select method</option>
+                      <option>Bank transfer</option>
+                      <option>Card payment</option>
+                      <option>Mobile wallet</option>
+                    </select>
+                  </div>
+                  <div class="field full">
+                    <label for="checkoutTerms">
+                      <input id="checkoutTerms" type="checkbox" required /> I agree to the subscription terms and cancellation policy.
+                    </label>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="btn" type="submit">Proceed to Secure Checkout</button>
+                </div>
+                <p style="margin-top: 14px; color: var(--muted); font-size: 0.9rem;">
+                  This front-end is a prototype only. Real payment processing requires a secure third-party provider and backend integration.
+                </p>
+              </form>
+            </div>
+
+            <aside class="order-summary">
+              <h3>Order Summary</h3>
+              <div class="summary-row">
+                <span>Selected plan</span>
+                <strong id="summaryPlan">Professional</strong>
+              </div>
+              <div class="summary-row">
+                <span>Billing frequency</span>
+                <strong id="summaryPeriod">Monthly</strong>
+              </div>
+              <div class="summary-row">
+                <span>Price</span>
+                <strong id="summaryPrice">N100,000</strong>
+              </div>
+              <div class="summary-row">
+                <span>Setup & onboarding</span>
+                <strong>N0</strong>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <strong id="summaryTotal">N100,000</strong>
+              </div>
+              <div class="form-actions" style="margin-top: 18px;">
+                <button type="button" class="btn secondary" id="checkoutPlanButton">Select plan</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">How It Works</span>
+            <h2>Simple Process</h2>
+          </div>
+
+          <div class="how-grid">
+            <article class="step-card">
+              <div class="step-number">01</div>
+              <h3>Choose a Plan</h3>
+              <p>Select the service package that fits your needs.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">02</div>
+              <h3>Subscribe</h3>
+              <p>Complete your subscription and account setup.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">03</div>
+              <h3>Tell Us What You Need</h3>
+              <p>Submit projects, updates or support requests.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">04</div>
+              <h3>We Handle the Technology</h3>
+              <p>DOLA IT DEVELOPMENT works on the requested services according to the plan.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="project-request">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Project Requests</span>
+            <h2>Request a New Project</h2>
+          </div>
+
+          <div class="form-card">
+            <form id="projectForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="projectName">Project name</label>
+                  <input id="projectName" type="text" required />
+                </div>
+                <div class="field">
+                  <label for="projectService">Service</label>
+                  <select id="projectService" required>
+                    <option value="">Select service</option>
+                    <option>Website Development</option>
+                    <option>Website Maintenance</option>
+                    <option>Business Automation</option>
+                    <option>Cloud Support</option>
+                    <option>Cybersecurity Support</option>
+                    <option>Software Development</option>
+                    <option>IT Consulting</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="projectDescription">Description</label>
+                  <textarea id="projectDescription" required></textarea>
+                </div>
+                <div class="field">
+                  <label for="projectDeadline">Desired deadline</label>
+                  <input id="projectDeadline" type="date" />
+                </div>
+                <div class="field">
+                  <label for="projectBudget">Budget</label>
+                  <input id="projectBudget" type="text" placeholder="e.g. N250,000" />
+                </div>
+                <div class="field full">
+                  <label for="projectRequirements">Additional requirements</label>
+                  <textarea id="projectRequirements"></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn" type="submit">Submit Project Request</button>
+              </div>
+              <div class="success-message" id="projectSuccess">Project request submitted successfully.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button">How do subscriptions work?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Subscriptions are billed on the selected cycle and renew automatically until cancelled. Customer plans can be upgraded, adjusted, or paused according to your business policy.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">Can I change my plan?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes, plan changes can be managed through your customer dashboard once your backend is connected. Policy and timing should be confirmed by the business owner.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">Can I cancel my subscription?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. The business should publish a clear cancellation policy and define any notice periods or billing terms before launch.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">Do you offer weekly billing?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Weekly billing is available for select plans in the prototype and can be connected to a payment provider that supports recurring weekly payments in your region.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">What happens after I subscribe?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">You receive onboarding guidance, account setup, and a clear handoff to the service team so your requested support or development work can begin.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">How quickly do you respond?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Response time varies by plan. Priority and business plans receive faster handling. Exact service level targets should be confirmed in your final policy documents.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">Can I request custom development?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. Custom development and project work can be requested through the customer dashboard or contact form when connected to a real system.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">Do you provide website maintenance?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. Website maintenance is included in the available plans and can be extended with custom support packages as needed.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">What payment methods are supported?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">This front-end is designed to support digital payment providers appropriate to the customer market. Confirm supported methods with your provider before launch.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">Is there a refund policy?<span class="faq-toggle">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">A refund and cancellation policy should be created and reviewed by a legal adviser before the business begins accepting payments.</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div>
+            <span class="eyebrow">About DOLA IT DEVELOPMENT</span>
+            <h2>Reliable technology solutions for growing businesses.</h2>
+            <p>
+              DOLA IT DEVELOPMENT is focused on helping businesses use technology through development,
+              maintenance, support and digital solutions. The goal is simple: provide reliable, practical
+              technology support that makes operations smoother and more efficient.
+            </p>
+            <ul class="bullet-list">
+              <li>Practical technology support for day-to-day business operations</li>
+              <li>Reliable development and maintenance for websites and systems</li>
+              <li>Long-term service support with a focus on security and stability</li>
+              <li>Scalable digital solutions designed for business continuity</li>
+            </ul>
+          </div>
+
+          <div class="about-panel">
+            <h3>What we focus on</h3>
+            <ul class="bullet-list">
+              <li>Website development and digital platform support</li>
+              <li>Security monitoring and operational resilience</li>
+              <li>Maintenance, updates, and cloud-related assistance</li>
+              <li>Business automation and technical consulting</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-info">
+            <span class="eyebrow" style="color: #8db7ff;">Contact</span>
+            <h2>Let’s talk about your technology needs.</h2>
+            <p>Tell us about your business, your website, your goals, or the support you need.</p>
+            <ul class="contact-list">
+              <li>Email: <a href="mailto:dolabomioyejola84@gmail.com">dolabomioyejola84@gmail.com</a></li>
+              <li>Phone: <span>Your business phone number</span></li>
+              <li>Location: Nigeria</li>
+            </ul>
+          </div>
+
+          <div class="form-card">
+            <form id="contactForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="contactName">Full Name</label>
+                  <input id="contactName" type="text" required />
+                </div>
+                <div class="field">
+                  <label for="contactEmail">Email</label>
+                  <input id="contactEmail" type="email" required />
+                </div>
+                <div class="field">
+                  <label for="contactPhone">Phone</label>
+                  <input id="contactPhone" type="tel" />
+                </div>
+                <div class="field">
+                  <label for="contactCompany">Company</label>
+                  <input id="contactCompany" type="text" />
+                </div>
+                <div class="field full">
+                  <label for="contactService">Service</label>
+                  <select id="contactService">
+                    <option value="">Select a service</option>
+                    <option>Website Maintenance</option>
+                    <option>Website Development</option>
+                    <option>IT Consulting</option>
+                    <option>Software Development</option>
+                    <option>Business Automation</option>
+                    <option>Cloud Support</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="contactMessage">Message</label>
+                  <textarea id="contactMessage" required></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn" type="submit">Send Message</button>
+                <button class="btn secondary" type="button" data-scroll-target="#plans">Request a Consultation</button>
+              </div>
+              <div class="success-message" id="contactSuccess">Your message has been sent. A real email service is required for delivery.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="login">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Customer Accounts</span>
+            <h2>Customer Account Preview</h2>
+          </div>
+
+          <div class="account-wrap">
+            <div class="account-panel">
+              <h3>Sign Up</h3>
+              <form id="signupForm" novalidate>
+                <div class="field">
+                  <label for="signupName">Name</label>
+                  <input id="signupName" type="text" required />
+                </div>
+                <div class="field">
+                  <label for="signupEmail">Email</label>
+                  <input id="signupEmail" type="email" required />
+                </div>
+                <div class="field">
+                  <label for="signupPassword">Password</label>
+                  <input id="signupPassword" type="password" required />
+                </div>
+                <div class="field">
+                  <label for="signupConfirm">Confirm Password</label>
+                  <input id="signupConfirm" type="password" required />
+                </div>
+                <label style="display:flex; gap: 10px; align-items: center; margin-top: 10px;">
+                  <input id="acceptTerms" type="checkbox" required /> Accept Terms
+                </label>
+                <div class="form-actions">
+                  <button class="btn" type="submit">Create Account</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="account-panel">
+              <h3>Login</h3>
+              <form id="loginForm" novalidate>
+                <div class="field">
+                  <label for="loginEmail">Email</label>
+                  <input id="loginEmail" type="email" required />
+                </div>
+                <div class="field">
+                  <label for="loginPassword">Password</label>
+                  <input id="loginPassword" type="password" required />
+                </div>
+                <label style="display:flex; gap: 10px; align-items: center; margin-top: 10px;">
+                  <input type="checkbox" /> Remember me
+                </label>
+                <div class="form-actions">
+                  <button class="btn" type="submit">Login</button>
+                  <button type="button" class="btn secondary" id="forgotPasswordButton">Forgot password</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="account-panel">
+              <h3>Account</h3>
+              <ul class="bullet-list">
+                <li>Personal information</li>
+                <li>Subscription</li>
+                <li>Billing</li>
+                <li>Security</li>
+                <li>Logout</li>
+              </ul>
+              <p style="margin-top: 18px;">Demo only: production authentication requires a secure backend, password hashing, session management, and account recovery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="admin">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Admin Dashboard</span>
+            <h2>DOLA IT DEVELOPMENT Admin</h2>
+          </div>
+
+          <div class="dashboard-shell">
+            <div class="dashboard-header">
+              <h3>Overview</h3>
+              <span class="demo-label">Placeholder Data</span>
+            </div>
+
+            <div class="admin-grid">
+              <div class="dash-card">
+                <span class="label">Customers</span>
+                <span class="value">142</span>
+              </div>
+              <div class="dash-card">
+                <span class="label">Subscriptions</span>
+                <span class="value">84</span>
+              </div>
+              <div class="dash-card">
+                <span class="label">Open Tickets</span>
+                <span class="value">19</span>
+              </div>
+              <div class="dash-card">
+                <span class="label">Projects</span>
+                <span class="value">26</span>
+              </div>
+            </div>
+
+            <div class="admin-panels">
+              <div class="list-panel">
+                <h4>Recent Customers</h4>
+                <table class="mini-table">
+                  <tr><th>Name</th><th>Plan</th></tr>
+                  <tr><td>Kate M.</td><td>Starter</td></tr>
+                  <tr><td>Adesoji B.</td><td>Professional</td></tr>
+                  <tr><td>Hannah C.</td><td>Business</td></tr>
+                </table>
+              </div>
+
+              <div class="list-panel">
+                <h4>Support Tickets</h4>
+                <table class="mini-table">
+                  <tr><th>Subject</th><th>Priority</th></tr>
+                  <tr><td>Website glitch</td><td>High</td></tr>
+                  <tr><td>Security review</td><td>Urgent</td></tr>
+                  <tr><td>Cloud config</td><td>Normal</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="legal">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Business Policies</span>
+            <h2>Legal and Business Pages</h2>
+          </div>
+
+          <div class="scope-box">
+            <h3>Required before launch</h3>
+            <p>These documents should be reviewed, customized, and approved before the business begins collecting recurring payments.</p>
+            <ul>
+              <li>Privacy Policy</li>
+              <li>Terms of Service</li>
+              <li>Subscription Terms</li>
+              <li>Refund Policy</li>
+              <li>Cancellation Policy</li>
+              <li>Cookie Policy</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="scope-box">
+            <h3>What works in the front-end prototype</h3>
+            <ul>
+              <li>Navigation, pricing, forms, interactive cards, FAQ, modals, dashboard layouts, and frontend validations</li>
+              <li>Demo data and placeholder states for subscription, payment, admin, and support flows</li>
+              <li>Responsive design and front-end interactions for the intended business workflow</li>
+            </ul>
+            <h3 style="margin-top: 20px;">What requires a backend or third-party service</h3>
+            <ul>
+              <li>Real user accounts and secure authentication</li>
+              <li>Real subscription billing and recurring payment processing</li>
+              <li>Database-backed storage for support tickets, projects, and admin records</li>
+              <li>Email notifications and real customer communication</li>
+              <li>Hosted payment provider integration and secure checkout</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div class="container cta-inner">
+          <div>
+            <span class="eyebrow" style="color: #9dc0ff;">Ready to grow?</span>
+            <h2>Ready to Build a Better Digital Business?</h2>
+            <p>Choose a plan, tell us what you need, and let DOLA IT DEVELOPMENT handle the technology.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="#plans">View Plans</a>
+            <a class="btn secondary" href="#contact">Contact DOLA IT DEVELOPMENT</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand" style="color: white; margin-bottom: 14px;">
+            <span class="brand-mark">D</span>
+            <span>DOLA IT DEVELOPMENT</span>
+          </div>
+          <p>Technology. Development. Support.</p>
+          <p>Professional technology services through recurring plans for businesses that need reliable support.</p>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#plans">Plans</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#legal">Privacy Policy</a></li>
+            <li><a href="#legal">Terms of Service</a></li>
+            <li><a href="#legal">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:dolabomioyejola84@gmail.com">dolabomioyejola84@gmail.com</a></li>
+            <li><span>Your business phone number</span></li>
+            <li>Professional support</li>
+            <li>Reliable digital systems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container subtle-note">
+        <span>© 2026 DOLA IT DEVELOPMENT. Prototype front-end.</span>
+        <span>Secure backend and payment integrations required before launch.</span>
+      </div>
+    </footer>
+
+    <div class="modal" id="serviceModal" aria-modal="true" role="dialog">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3 id="modalTitle">Service</h3>
+          <button class="modal-close" type="button" aria-label="Close service modal">×</button>
+        </div>
+        <div id="modalContent"></div>
+        <div class="form-actions">
+          <button class="btn" type="button" data-scroll-target="#contact">Contact / Start</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+    <div class="toast" id="toast"></div>
+
+    <script>
+      const serviceContent = {
+        'Website Development': {
+          description: 'Professional websites and web applications designed for serious business operations.',
+          included: ['Custom website design', 'Responsive front-end development', 'Optimization for business workflows', 'Launch support'],
+          audience: 'Businesses and startups that need a consistent online presence',
+          delivery: '2-6 weeks depending on scope',
+          note: 'Best for business websites, web platforms, and digital product foundations.'
+        },
+        'Website Maintenance': {
+          description: 'Ongoing updates, fixes, improvements and monitoring to keep your digital platform stable and current.',
+          included: ['Content updates', 'Bug fixes', 'Performance checks', 'Security and compatibility updates'],
+          audience: 'Businesses that need regular support without an in-house technical team',
+          delivery: 'Weekly or monthly service windows',
+          note: 'Ideal for companies that need reliable upkeep and support.'
+        },
+        'Cybersecurity Support': {
+          description: 'Security-focused maintenance and monitoring to protect websites, systems, and business data.',
+          included: ['Security monitoring', 'Patch reviews', 'Access checks', 'Risk guidance'],
+          audience: 'Businesses handling customer information or sensitive business data',
+          delivery: 'Ongoing support as part of service plan',
+          note: 'This work should be connected to real monitoring and security services for production environments.'
+        },
+        'Cloud Support': {
+          description: 'Assistance with cloud-based platforms, hosting environments, and deployment needs.',
+          included: ['Cloud configuration reviews', 'Hosting guidance', 'Deployment support', 'Environment checks'],
+          audience: 'Businesses running cloud-hosted systems or requiring better infrastructure support',
+          delivery: 'Depends on environment complexity',
+          note: 'Requires a real hosting or cloud provider integration for production use.'
+        },
+        'Business Automation': {
+          description: 'Technology solutions designed to reduce repetitive work and improve process consistency.',
+          included: ['Workflow review', 'Automation setup assistance', 'Process improvements', 'Integration planning'],
+          audience: 'Teams looking to reduce manual administration and improve efficiency',
+          delivery: '1-4 weeks depending on complexity',
+          note: 'Useful for repetitive administrative tasks, customer onboarding, and approvals.'
+        },
+        'IT Consulting': {
+          description: 'Professional guidance for technology decisions, digital planning, and business system improvements.',
+          included: ['Technology recommendations', 'System review', 'Planning discussions', 'Roadmap guidance'],
+          audience: 'Business owners, founders, and teams needing strategic technology direction',
+          delivery: 'Consultation schedule based on engagement',
+          note: 'This service should be supported by formal scope definitions and project agreements.'
+        },
+        'Software Development': {
+          description: 'Custom software and applications that solve specific business challenges.',
+          included: ['Feature planning', 'Custom application development', 'Integration support', 'Quality checks'],
+          audience: 'Businesses needing custom tools or workflow systems beyond standard templates',
+          delivery: 'Variable, based on project scope',
+          note: 'Production development requires a dedicated backlog, architecture plan, and secure deployment pipeline.'
+        },
+        'Digital Support': {
+          description: 'Ongoing technical assistance for business teams and digital platforms.',
+          included: ['General technical support', 'Issue triage', 'Website assistance', 'Product maintenance'],
+          audience: 'Any business needing dependable technical help on a recurring basis',
+          delivery: 'Support response depends on plan level',
+          note: 'This works best with a formal support queue and tracking system.'
+        }
+      };
+
+      const billingButtons = document.querySelectorAll('.billing-option');
+      const prices = document.querySelectorAll('.plan-price');
+      const planButtons = document.querySelectorAll('.plan-btn');
+      const summaryPlan = document.getElementById('summaryPlan');
+      const summaryPeriod = document.getElementById('summaryPeriod');
+      const summaryPrice = document.getElementById('summaryPrice');
+      const summaryTotal = document.getElementById('summaryTotal');
+      let activeBilling = 'monthly';
+      let selectedPlan = 'Professional';
+
+      function updateBillingState(mode) {
+        activeBilling = mode;
+        billingButtons.forEach((button) => {
+          button.classList.toggle('active', button.dataset.billing === mode);
+        });
+
+        prices.forEach((price) => {
+          const value = mode === 'weekly' ? price.dataset.weekly : price.dataset.monthly;
+          price.textContent = value;
+          const billingNote = price.nextElementSibling;
+          if (billingNote && billingNote.classList.contains('billing-note')) {
+            billingNote.textContent = mode === 'weekly' ? 'per week' : 'per month';
+          }
+        });
+
+        updateSummary();
+      }
+
+      function updateSummary() {
+        const current = document.querySelector(`.plan-card .plan-price`);
+        const selected = getPlanValue(selectedPlan, activeBilling);
+        summaryPlan.textContent = selectedPlan;
+        summaryPeriod.textContent = activeBilling === 'weekly' ? 'Weekly' : 'Monthly';
+        summaryPrice.textContent = selected;
+        summaryTotal.textContent = selected;
+      }
+
+      function getPlanValue(planName, mode) {
+        const planCard = [...document.querySelectorAll('.plan-card')].find((card) => {
+          const name = card.querySelector('.plan-name')?.textContent.trim();
+          return name === planName;
+        });
+
+        if (!planCard) return 'N100,000';
+        const price = planCard.querySelector('.plan-price');
+        return price ? (mode === 'weekly' ? price.dataset.weekly : price.dataset.monthly) : 'N100,000';
+      }
+
+      billingButtons.forEach((button) => {
+        button.addEventListener('click', () => updateBillingState(button.dataset.billing));
+      });
+
+      planButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selectedPlan = button.dataset.plan;
+          updateSummary();
+          showToast(`${selectedPlan} selected. Proceed to secure checkout.`);
+          document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach((item) => {
+        const button = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        button.setAttribute('aria-expanded', 'false');
+        button.addEventListener('click', () => {
+          const isOpen = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!isOpen));
+          answer.style.maxHeight = isOpen ? '0px' : `${answer.scrollHeight}px`;
+          item.querySelector('.faq-toggle').textContent = isOpen ? '+' : '−';
+        });
+      });
+
+      const modal = document.getElementById('serviceModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      const closeModalBtn = document.querySelector('.modal-close');
+
+      document.querySelectorAll('.service-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          const service = card.dataset.service;
+          const details = serviceContent[service] || serviceContent['Website Development'];
+          modalTitle.textContent = service;
+          modalContent.innerHTML = `
+            <p>${details.description}</p>
+            <div class="grid-2">
+              <div>
+                <h4>What is included</h4>
+                <ul class="bullet-list">
+                  ${details.included.map((item) => `<li>${item}</li>`).join('')}
+                </ul>
+              </div>
+              <div>
+                <h4>Who it is for</h4>
+                <p>${details.audience}</p>
+                <h4>Estimated delivery time</h4>
+                <p>${details.delivery}</p>
+              </div>
+            </div>
+            <p style="margin-top: 12px;">${details.note}</p>
+          `;
+          modal.classList.add('open');
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('open');
+      }
+
+      closeModalBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+
+      document.querySelectorAll('[data-scroll-target]').forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const targetId = trigger.getAttribute('data-scroll-target');
+          const target = document.querySelector(targetId);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      const toast = document.getElementById('toast');
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(showToast.timer);
+        showToast.timer = setTimeout(() => toast.classList.remove('show'), 2600);
+      }
+
+      function validateRequired(form) {
+        const fields = [...form.querySelectorAll('[required]')];
+        let valid = true;
+        fields.forEach((field) => {
+          if (!field.value.trim()) {
+            valid = false;
+            field.style.borderColor = 'var(--danger)';
+          } else {
+            field.style.borderColor = '';
+          }
+        });
+        return valid;
+      }
+
+      document.getElementById('supportForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!validateRequired(event.currentTarget)) {
+          showToast('Please complete all required support fields.');
+          return;
+        }
+        event.currentTarget.querySelector('.success-message').classList.add('visible');
+        showToast('Support request created.');
+        event.currentTarget.reset();
+      });
+
+      document.getElementById('projectForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!validateRequired(event.currentTarget)) {
+          showToast('Please complete the project form.');
+          return;
+        }
+        event.currentTarget.querySelector('.success-message').classList.add('visible');
+        showToast('Project request submitted successfully.');
+        event.currentTarget.reset();
+      });
+
+      document.getElementById('checkoutForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!validateRequired(event.currentTarget)) {
+          showToast('Please review the checkout form.');
+          return;
+        }
+        if (!document.getElementById('checkoutTerms').checked) {
+          showToast('Please accept the terms and conditions.');
+          return;
+        }
+        showToast('Demo checkout ready. Connect a payment provider to process real orders.');
+      });
+
+      document.getElementById('contactForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!validateRequired(event.currentTarget)) {
+          showToast('Please fill in the required contact fields.');
+          return;
+        }
+        event.currentTarget.querySelector('.success-message').classList.add('visible');
+        showToast('Message queued for follow-up.');
+        event.currentTarget.reset();
+      });
+
+      document.getElementById('signupForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!validateRequired(event.currentTarget)) {
+          showToast('Please complete the sign-up information.');
+          return;
+        }
+        showToast('Demo signup form ready for a secure backend.');
+      });
+
+      document.getElementById('loginForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!validateRequired(event.currentTarget)) {
+          showToast('Please enter your login credentials.');
+          return;
+        }
+        showToast('Demo login only. Connect a secure authentication backend before launch.');
+      });
+
+      document.getElementById('forgotPasswordButton').addEventListener('click', () => {
+        showToast('Password recovery requires a secure backend and email service.');
+      });
+
+      const themeToggle = document.querySelector('.theme-toggle');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) document.body.classList.add('dark');
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+      });
+
+      const mobileMenu = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+
+      const backToTop = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('show', window.scrollY > 420);
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      updateBillingState(activeBilling);
+      updateSummary();
+    </script>
+  </body>
+</html>
